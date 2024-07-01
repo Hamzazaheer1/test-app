@@ -15,7 +15,7 @@ function App() {
     }
   };
 
-  console.log("hamza");
+  console.log("hamza", connecting, provider);
 
   return (
     <div className="App">
