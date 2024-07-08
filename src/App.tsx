@@ -1,7 +1,7 @@
 const App = () => {
   return (
     <div>
-      App
+      <h1 className="text-2xl font-bold">App</h1>
       <input
         type="text"
         placeholder="Search here...."
