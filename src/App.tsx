@@ -1,38 +1,18 @@
-import { useState } from "react";
-import { useSDK } from "@metamask/sdk-react";
-import "./App.css";
+import React from "react";
 
-function App() {
-  const [account, setAccount] = useState<string>();
-  const { sdk, connected, connecting, provider, chainId } = useSDK();
-
-  const connect = async () => {
-    try {
-      const accounts = await sdk?.connect();
-      setAccount(accounts?.[0]);
-    } catch (err) {
-      console.warn("failed to connect..", err);
-    }
-  };
-
-  console.log("hamza", connecting, provider);
-
+const App = () => {
   return (
-    <div className="App">
-      <button style={{ padding: 10, margin: 10 }} onClick={connect}>
-        Connect
-      </button>
-      {connected && (
-        <div>
-          <>
-            {chainId && "Connected chain: ${chainId}"}
-            <p></p>
-            {account && "Connected account: ${account}"}
-          </>
-        </div>
-      )}
+    <div>
+      App
+      <input
+        type="text"
+        placeholder="Search here...."
+        className="h-[23px] w-full rounded-[8px] border-[0.59px] border-[#707175] bg-[#F6F6F6] pl-[10px] pr-6 text-[9px] font-normal text-[#858585] focus:outline-none tablet:h-[36px] tablet:pr-10 tablet:text-[16px] tablet:leading-[16px] dark:border-[#989898] dark:bg-[#000] dark:text-[#E8E8E8]"
+        // value={search}
+        onChange={(e) => console.log(e.target.value)}
+      />
     </div>
   );
-}
+};
 
 export default App;
